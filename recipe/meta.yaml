@@ -6,22 +6,17 @@ package:
   version: {{ version }}
 
 source:
-  fn: bzip2-{{ version }}.tar.gz
   url: http://www.bzip.org/{{ version }}/bzip2-{{ version }}.tar.gz
   md5: 00b516f4704d4a7cb50a1d97e6e8e15b
 
 build:
   number: 1
-  features:
-    - vc9  # [win and py27]
-    - vc10  # [win and py34]
-    - vc14  # [win and py>=35]
-  skip: true  # [win and py36]
 
 requirements:
   build:
-    - python  # [win]
+    - {{ compiler('c') }}  # [win]
     - toolchain
+    - ccache-toolchain
 
 test:
   requires:

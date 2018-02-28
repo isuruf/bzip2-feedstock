@@ -1,0 +1,6 @@
+bzip2:
+- '1.0'
+c_compiler:
+- vs2008
+target_platform:
+- win-32
